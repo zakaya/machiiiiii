@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkyCast | Weather Forecast</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="navbar">
+      <a class="logo" href="#">☀ Sky<span>Cast</span></a>
+      <div class="nav-right">
+        <span class="live"><i></i> LIVE WEATHER</span>
+        <button id="unitBtn" class="unit-btn">°C / °F</button>
+      </div>
+    </header>
+
+    <section class="intro">
+      <p class="eyebrow">YOUR PERSONAL WEATHER STATION</p>
+      <h1>Weather, <span>at a glance.</span></h1>
+      <p class="subtitle">Know before you go. Your day, forecasted.</p>
+      <p id="date" class="date"></p>
+    </section>
+
+    <form id="searchForm" class="search">
+      <span>⌕</span>
+      <input id="cityInput" type="text"
+        placeholder="Search a city... e.g. Islamabad">
+      <button type="submit">Search ↗</button>
+      <button type="button" id="locationBtn" class="location"
+        title="Use my location">⌖</button>
+    </form>
+
+    <p id="status" class="status">Loading weather...</p>
+
+    <section class="main-grid">
+      <article class="card current">
+        <div class="card-head">
+          <div>
+            <p class="eyebrow">CURRENT WEATHER</p>
+            <h2 id="cityName">Mardan, Pakistan</h2>
+            <p id="condition" class="muted">Loading...</p>
+          </div>
+          <div id="weatherIcon" class="weather-icon">🌤️</div>
+        </div>
+
+        <div class="temperature-row">
+          <div id="temperature" class="temperature">--°</div>
+          <div class="temp-info">
+            <p id="highLow">H: --° / L: --°</p>
+            <p id="feelsLike">Feels like --°</p>
+          </div>
+        </div>
+
+        <div class="line"></div>
+
+        <div class="metrics">
+          <div class="metric">
+            <span>💧</span>
+            <div><small>Humidity</small><strong id="humidity">--%</strong></div>
+          </div>
+          <div class="metric">
+            <span>🌬️</span>
+            <div><small>Wind speed</small><strong id="wind">-- km/h</strong></div>
+          </div>
+          <div class="metric">
+            <span>☀️</span>
+            <div><small>UV index</small><strong id="uv">--</strong></div>
+          </div>
+          <div class="metric">
+            <span>🌧️</span>
+            <div><small>Rain chance</small><strong id="rain">--%</strong></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="card highlights">
+        <p class="eyebrow">WEATHER DETAILS</p>
+        <h2>Today's highlights</h2>
+        <div class="highlight-grid">
+          <div class="highlight">
+            <p>☀️ UV INDEX</p>
+            <strong id="uvBig">--</strong>
+            <small id="uvAdvice">Loading UV information</small>
+            <div class="bar"><span id="uvBar"></span></div>
+          </div>
+          <div class="highlight">
+            <p>🌅 SUNRISE</p>
+            <strong id="sunrise">--:--</strong>
+            <small>Morning light</small>
+          </div>
+          <div class="highlight">
+            <p>🌇 SUNSET</p>
+            <strong id="sunset">--:--</strong>
+            <small>Evening light</small>
+          </div>
+          <div class="highlight">
+            <p>🌡️ FEELS LIKE</p>
+            <strong id="feelsBig">--°</strong>
+            <small>Perceived temperature</small>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="card forecast">
+      <div class="section-heading">
+        <div><p class="eyebrow">NEXT 24 HOURS</p><h2>Hourly forecast</h2></div>
+        <span class="muted">Local time</span>
+      </div>
+      <div id="hourly" class="hourly">
+        <p>Loading hourly forecast...</p>
+      </div>
+    </section>
+
+    <section class="card forecast">
+      <div class="section-heading">
+        <div><p class="eyebrow">PLAN AHEAD</p><h2>5-day forecast</h2></div>
+        <span class="muted">Coming up</span>
+      </div>
+      <div id="daily" class="daily">
+        <p>Loading daily forecast...</p>
+      </div>
+    </section>
+
+    <footer>
+      <a class="logo" href="#">☀ Sky<span>Cast</span></a>
+      <p>Weather data by Open-Meteo</p>
+      <button id="refreshBtn">↻ Refresh weather</button>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
